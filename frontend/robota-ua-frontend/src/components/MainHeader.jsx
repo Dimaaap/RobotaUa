@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { MdVpnKey } from "react-icons/md";
 
 const MainHeader = () => {
   return (
@@ -31,6 +34,19 @@ const MainHeader = () => {
         hover:text-red-500 ease-in duration-300">
             Роботодавцю
         </div>
+      </div>
+      <div className="px-7 py-2 flex flex-row hover:bg-red-600 
+      justify-between -mt-2 gap-0" >
+        <Link href="/">
+        <span className="text-white inline-block w-1/2
+        -ml-10 mt">
+          <MdVpnKey size={20} />
+        </span>
+        <span className="text-white font-semibold inline-block 
+        w-1/2 ml-2 -mt-6">
+          Увійти
+        </span>
+        </Link>
       </div>
     </div>
   )
