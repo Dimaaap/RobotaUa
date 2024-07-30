@@ -14,9 +14,11 @@ const BannerDefence = () => {
             Обери свою службу вільно та конфіденційно. 
             Будуй кар'єру за своїми правилами!
         </p>
-        <Link href="/" className="">
+        <Link href="/" className="flex flex-row outline-none 
+        text-red-500 font-bold py-2 hover:text-red-600
+        border-2 border-red-500 w-1/4 rounded-md align-center justify-center">
             Про проєкт 
-            <BsBoxArrowInUpRight size={12} />
+            <BsBoxArrowInUpRight size={15} className="mt-1.5 ml-1" />
         </Link>
       </div>
       <div className="">
