@@ -1,4 +1,5 @@
 from random import randint
+from uuid import uuid4
 
 from django.db import models
 
@@ -49,7 +50,24 @@ class CompanyVacancies(models.Model):
     vacancy_id = models.BigIntegerField(primary_key=True)
     company_id = models.ManyToManyField(Company)
     vacancy_title = models.TextField(default="")
+    profession_id = models.ForeignKey("Profession", on_delete=models.CASCADE, default="")
+    city_id = models.ForeignKey("City", on_delete=models.CASCADE, default="")
 
     def __str__(self):
         return self.vacancy_title
 
+
+class Profession(models.Model):
+    profession_id = models.UUIDField(default=uuid4, primary_key=True)
+    title = models.CharField(max_length=130, default="")
+    slug = models.SlugField(max_length=100, default="")
+
+    def __str__(self):
+        return f"{self.title} {self.slug}"
+
+
+class City(models.Model):
+    city_id = models.UUIDField(default=uuid4, primary_key=True)
+    title = models.CharField(max_length=60, default="")
+    city_image = models.ImageField(upload_to="cities/city", default="", blank=True)
+    slug = models.SlugField(max_length=50, default="")
