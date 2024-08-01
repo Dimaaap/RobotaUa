@@ -11,7 +11,7 @@ const PopularLocations = () => {
             Популярні міста
         </h2>
         <Link className="flex text-red-500 font-bold 
-        cursor-pointer hover:text-red-700" href="/">
+        cursor-pointer hover:text-red-700" href="jobsearch/cities">
             Подивитись всі міста
         </Link>
       </div>

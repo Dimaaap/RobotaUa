@@ -3,6 +3,8 @@ import { CiSearch } from "react-icons/ci";
 import { CiLocationOn } from "react-icons/ci";
 import { FaAngleDown } from "react-icons/fa6";
 import { TbSquareRotatedFilled } from "react-icons/tb";
+import SearchVacancyForm from "./shared/SearchVacancyForm";
+import FindJobBtn from "./shared/FindJobBtn";
 
 const BottomHeader = () => {
   return (
@@ -16,31 +18,8 @@ const BottomHeader = () => {
       className="absolute -top-3"  
       width={180} height={180} />
       <div className="flex flex-row gap-0">
-        <form className="px-7 w-full relative" method="get">
-          <CiSearch className="absolute text-gray-600 top-4 left-8 
-          font-bold" 
-          size={24} />
-          <input className="text-sm w-full h-14 outline-none
-          px-8 font-light text-gray-600 border border-black 
-          border-r-[0]" 
-          placeholder="Ким або в якій компанії хочете працювати?" /> 
-          <span className="absolute right-130 bg-white text-black
-           text-sm font-normal h-14 border border-black border-l-[0]
-           align-middle px-2 py-2 cursor-pointer right-7">
-            <CiLocationOn size={24} className="text-gray-600 absolute mr-2 
-            mt-2" />
-            <p className="ml-7 mt-2.5 inline-block">Вся Україна</p>
-            <FaAngleDown size={15} className="inline-block
-             text-gray-600 ml-2" />
-          </span>
-        </form>
-        <button type="submit" className="text-sm font-black
-        mr-7 border-2 border-white rounded-md w-60 h-14 flex 
-        text-center justify-center py-3.5 hover:bg-white
-        hover:text-red-500">
-            <CiSearch size={20} className="mr-2" />
-            Знайти роботу
-          </button>
+        <SearchVacancyForm />
+        <FindJobBtn />
       </div>
       <div className="flex flex-row gap-10 font-light 
       text-sm ml-52 mt-7 mb-5">
