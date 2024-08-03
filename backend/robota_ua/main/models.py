@@ -71,3 +71,15 @@ class City(models.Model):
     title = models.CharField(max_length=60, default="")
     city_image = models.ImageField(upload_to="cities/city", default="", blank=True)
     slug = models.SlugField(max_length=50, default="")
+    region_id = models.OneToOneField("Region", on_delete=models.CASCADE, default="")
+
+    def __str__(self):
+        return self.title
+
+
+class Region(models.Model):
+    region_id = models.UUIDField(default=uuid4, primary_key=True)
+    title = models.CharField(max_length=60, default="")
+
+    def __str__(self):
+        return self.title

@@ -1,6 +1,7 @@
 import CitiesContainer from "@/components/jobsearchPage/CitiesContainer"
 import FilterCategories from "@/components/jobsearchPage/FilterCategories"
 import ShortenHeader from "@/components/jobsearchPage/shortenHeader"
+import AllCitiesChoice from "@/components/jobsearchPage/AllCitiesChoice"
 
 export default function Home() {
     return(
@@ -9,6 +10,7 @@ export default function Home() {
           <div className="bg-gray-200">
             <FilterCategories /> 
             <CitiesContainer />
+            <AllCitiesChoice />
           </div>
         </div>
     )
