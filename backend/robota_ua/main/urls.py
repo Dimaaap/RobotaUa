@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 from .views import *
 
 urlpatterns = [
-    path('', main_page_view, name="main_page")
+    path('cities/', AllCitiesView.as_view(), name="all_cities")
 ]
 
 if settings.DEBUG:

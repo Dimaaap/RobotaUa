@@ -1,5 +1,14 @@
-from django.shortcuts import render, HttpResponse
+from rest_framework.views import APIView
+from rest_framework.response import Response
+
+from .models import City, Region
+from .serializers import CitySerializer
 
 
-def main_page_view(request):
-    return HttpResponse("HELLO")
+class AllCitiesView(APIView):
+    def get(self, request):
+        cities = City.objects.all().order_by("title")
+        serializer = CitySerializer(cities, many=True)
+        return Response(serializer.data)
+
+

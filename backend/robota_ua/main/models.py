@@ -71,10 +71,17 @@ class City(models.Model):
     title = models.CharField(max_length=60, default="")
     city_image = models.ImageField(upload_to="cities/city", default="", blank=True)
     slug = models.SlugField(max_length=50, default="")
-    region_id = models.OneToOneField("Region", on_delete=models.CASCADE, default="")
+    region_id = models.ForeignKey("Region", on_delete=models.CASCADE, default="")
 
     def __str__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        if self.title in City.objects.filter(title=self.title):
+            region = Region.objects.get(region_id=self.region_id)
+            self.title = f"{self.title} + {region.title} обл."
+        super().save(*args, **kwargs)
+
 
 
 class Region(models.Model):
